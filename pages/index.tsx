@@ -1,4 +1,7 @@
 import React from "react";
+
+import { withLayout } from "../layout/Layout";
+
 import { Button, Htag, P, Rating, Tag } from "../components";
 
 const Home = (): JSX.Element => {
@@ -34,4 +37,4 @@ const Home = (): JSX.Element => {
   );
 };
 
-export default Home;
+export default withLayout(Home);
