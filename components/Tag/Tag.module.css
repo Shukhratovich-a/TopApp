@@ -2,6 +2,7 @@
   display: inline-block;
 
   box-sizing: border-box;
+
   border-radius: 20px;
 }
 
@@ -48,6 +49,6 @@
 
 .primary {
   color: var(--primary);
-  background-color: transparent;
   border: 1px solid var(--primary);
+  background-color: transparent;
 }
