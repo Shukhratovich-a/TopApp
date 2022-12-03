@@ -6,7 +6,7 @@ import ArrowIcon from "./arrow.svg";
 
 import styles from "./Button.module.css";
 
-export const Button = ({ children, className, appearance, arrow = "none", ...props }: ButtonProps) => {
+export const Button = ({ children, className, appearance, arrow = "none", ...props }: ButtonProps): JSX.Element => {
   return (
     <button
       className={cn(styles.button, className, {
