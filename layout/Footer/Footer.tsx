@@ -7,7 +7,7 @@ import styles from "./Footer.module.css";
 
 export const Footer = ({ className, ...props }: FooterProps): JSX.Element => {
   return (
-    <div className={cn(className, styles.footer)} {...props}>
+    <footer className={cn(className, styles.footer)} {...props}>
       <div>OwlTop © 2020 - {format(new Date(), "yyyy")} Все права защищены</div>
 
       <a href="#" target="_blank">
@@ -17,6 +17,6 @@ export const Footer = ({ className, ...props }: FooterProps): JSX.Element => {
       <a href="#" target="_blank">
         Политика конфиденциальности
       </a>
-    </div>
+    </footer>
   );
 };
