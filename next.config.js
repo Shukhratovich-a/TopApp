@@ -2,6 +2,10 @@
 const nextConfig = {
   reactStrictMode: true,
 
+  images: {
+    domains: ["courses-top.ru"],
+  },
+
   webpack(config, options) {
     config.module.rules.push({
       loader: "@svgr/webpack",

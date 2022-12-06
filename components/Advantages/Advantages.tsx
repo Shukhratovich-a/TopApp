@@ -1,7 +1,3 @@
-import cn from "classnames";
-
-import { priceRu } from "../../helpers/helpers";
-
 import { AdvantagesProps } from "./Advantages.props";
 
 import { P } from "../P/P";

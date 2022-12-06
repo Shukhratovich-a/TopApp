@@ -12,24 +12,30 @@ const Search = (): JSX.Element => {
 export default withLayout(Search);
 
 export const getStaticProps: GetStaticProps<HomeProps> = async () => {
-  const firstCategory = 0;
-  const res = await fetch(process.env.NEXT_PUBLIC_DOMAIN + "/api/top-page/find", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify({
-      firstCategory,
-    }),
-  });
-  const menu: MenuItem[] = await res.json();
+  try {
+    const firstCategory = 0;
+    const res = await fetch(process.env.NEXT_PUBLIC_DOMAIN + "/api/top-page/find", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        firstCategory,
+      }),
+    });
+    const menu: MenuItem[] = await res.json();
 
-  return {
-    props: {
-      menu,
-      firstCategory,
-    },
-  };
+    return {
+      props: {
+        menu,
+        firstCategory,
+      },
+    };
+  } catch {
+    return {
+      notFound: true,
+    };
+  }
 };
 
 interface HomeProps extends Record<string, unknown> {

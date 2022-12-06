@@ -4,7 +4,7 @@ import { GetStaticProps } from "next";
 import { MenuItem } from "../interfaces/menu.interface";
 
 import { withLayout } from "../layout/Layout";
-import { Button, Htag, P, Rating, Tag } from "../components";
+import { Button, Htag, P, Rating, Tag, Input } from "../components";
 
 const Home = ({ menu }: HomeProps): JSX.Element => {
   const [rating, setRating] = React.useState<number>(4);
@@ -41,6 +41,8 @@ const Home = ({ menu }: HomeProps): JSX.Element => {
       </Tag>
 
       <Rating rating={rating} setRating={setRating} isEditable />
+
+      <Input placeholder="test" />
     </>
   );
 };
@@ -49,23 +51,29 @@ export default withLayout(Home);
 
 export const getStaticProps: GetStaticProps<HomeProps> = async () => {
   const firstCategory = 0;
-  const res = await fetch(process.env.NEXT_PUBLIC_DOMAIN + "/api/top-page/find", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify({
-      firstCategory,
-    }),
-  });
-  const menu: MenuItem[] = await res.json();
+  try {
+    const res = await fetch(process.env.NEXT_PUBLIC_DOMAIN + "/api/top-page/find", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        firstCategory,
+      }),
+    });
+    const menu: MenuItem[] = await res.json();
 
-  return {
-    props: {
-      menu,
-      firstCategory,
-    },
-  };
+    return {
+      props: {
+        menu,
+        firstCategory,
+      },
+    };
+  } catch {
+    return {
+      notFound: true,
+    };
+  }
 };
 
 interface HomeProps extends Record<string, unknown> {

@@ -1,12 +1,14 @@
 .firstLevel {
   display: grid;
+  align-items: center;
+
+  color: var(--gray-dark);
+
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 25px;
   grid-template-columns: 24px 1fr;
   gap: 20px;
-  align-items: center;
-  font-weight: 500;
-  font-size: 18px;
-  line-height: 25px;
-  color: var(--gray-dark);
 }
 
 .firstLevel + .firstLevel {
@@ -22,6 +24,7 @@
   margin-top: 15px;
   margin-left: 12px;
   padding-left: 32px;
+
   border-left: 1px solid #dfdfdf;
 }
 
@@ -30,10 +33,12 @@
 
   cursor: pointer;
   text-transform: uppercase;
-  font-weight: 300;
-  font-size: 12px;
-  line-height: 16px;
+
   color: var(--gray-dark);
+
+  font-size: 12px;
+  font-weight: 300;
+  line-height: 16px;
 }
 
 .secondLevelBlock {
@@ -53,12 +58,14 @@
 
   margin-bottom: 10px;
 
-  font-weight: 500;
-  font-size: 14px;
-  line-height: 19px;
+  cursor: pointer;
+
   color: var(--gray-dark);
 
-  cursor: pointer;
+  font-size: 14px;
+
+  font-weight: 500;
+  line-height: 19px;
 }
 
 .thirdLevelActive,
