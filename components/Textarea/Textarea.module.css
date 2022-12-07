@@ -1,8 +1,10 @@
-.inputWrapper {
+.textareaWrapper {
   position: relative;
 }
 
-.input {
+.textarea {
+  display: block;
+  width: 100%;
   padding: 7px 15px;
 
   color: var(--black);
@@ -16,11 +18,9 @@
 
   font-size: 16px;
   line-height: 22px;
-
-  border: 1px solid transparent;
 }
 
-.input::placeholder {
+.textarea::placeholder {
   color: var(--gray);
 }
 

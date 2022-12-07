@@ -1,12 +1,14 @@
 .product {
   display: grid;
-  grid-template-columns: [start] 70px [logoend] 30px [titlestart] calc(50% - 100px) [middle] 1fr [pricestart] auto [priceend] 40px [creditstart] auto [creditend] 40px [ratestart] auto [end];
+
+  margin-top: 30px;
 
   padding: 30px;
+  grid-template-columns: [start] 70px [logoend] 30px [titlestart] calc(50% - 100px) [middle] 1fr [pricestart] auto [priceend] 40px [creditstart] auto [creditend] 40px [ratestart] auto [end];
 }
 
-.product + .product {
-  margin-top: 30px;
+.productOpened {
+  border-radius: 5px 5px 0 0;
 }
 
 .logo {
@@ -157,6 +159,26 @@
   border-bottom: 1px dotted var(--gray-light);
 }
 
+.reviews {
+  border-radius: 0 0 5px 5px;
+}
+
+.closed {
+  overflow: hidden;
+
+  max-height: 0;
+  padding: 0;
+}
+
+.opened {
+  max-height: auto;
+  padding: 30px;
+}
+
+.rateTitle a {
+  color: var(--primary);
+}
+
 @media only screen and (max-width: 1320px) {
   .product {
     grid-template-columns: 70px 30px auto 40px auto 40px 1fr;
@@ -185,6 +207,7 @@
 
   .tags {
     grid-area: tags;
+
     margin-bottom: 20px;
   }
 
@@ -292,6 +315,7 @@
       "advBlock"
       "hr2"
       "actions";
+
     padding: 20px;
   }
 }

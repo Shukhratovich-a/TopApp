@@ -4,8 +4,9 @@ import { ParsedUrlQuery } from "querystring";
 
 import { MenuItem } from "../../interfaces/menu.interface";
 
+import { API, firstLevelMenu } from "../../helpers";
+
 import { withLayout } from "../../layout/Layout";
-import { firstLevelMenu } from "../../helpers/helpers";
 
 const Type = ({ firstCategory }: TypeProps): JSX.Element => {
   return <>Type: {firstCategory}</>;
@@ -34,7 +35,7 @@ export const getStaticProps: GetStaticProps<TypeProps> = async ({ params }: GetS
     };
   }
 
-  const res = await fetch(process.env.NEXT_PUBLIC_DOMAIN + "/api/top-page/find", {
+  const res = await fetch(API.topPage.find, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",

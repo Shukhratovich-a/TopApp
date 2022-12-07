@@ -3,6 +3,8 @@ import { GetStaticProps } from "next";
 
 import { MenuItem } from "../interfaces/menu.interface";
 
+import { API } from "../helpers";
+
 import { withLayout } from "../layout/Layout";
 import { Button, Htag, P, Rating, Tag, Input } from "../components";
 
@@ -52,7 +54,7 @@ export default withLayout(Home);
 export const getStaticProps: GetStaticProps<HomeProps> = async () => {
   const firstCategory = 0;
   try {
-    const res = await fetch(process.env.NEXT_PUBLIC_DOMAIN + "/api/top-page/find", {
+    const res = await fetch(API.topPage.find, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

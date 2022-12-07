@@ -1,3 +1,7 @@
+.ratingWrapper {
+  position: relative;
+}
+
 .filled {
   fill: var(--primary);
 
@@ -10,4 +14,17 @@
 
 .rating + .rating .star {
   margin-left: 5px;
+}
+
+.error svg {
+  stroke: var(--red);
+}
+
+.errorMessage {
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  color: var(--red);
+  font-size: 12px;
+  line-height: 14px;
 }
