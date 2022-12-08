@@ -24,7 +24,9 @@
   position: absolute;
   bottom: -10px;
   left: 0;
+
   color: var(--red);
+
   font-size: 12px;
   line-height: 14px;
 }

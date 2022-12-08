@@ -4,6 +4,7 @@
 
 .textarea {
   display: block;
+
   width: 100%;
   padding: 7px 15px;
 
@@ -33,7 +34,9 @@
   position: absolute;
   bottom: -15px;
   left: 0;
+
   color: var(--red);
+
   font-size: 12px;
   line-height: 14px;
 }
