@@ -2,14 +2,14 @@ import { FunctionComponent } from "react";
 
 import { LayoutProps } from "./Layout.props";
 
+import { AppContextProvider, IAppContext } from "../context/app.context";
+
 import { Header } from "./Header/Header";
 import { Sidebar } from "./Sidebar/Sidebar";
 import { Footer } from "./Footer/Footer";
-
-import { AppContextProvider, IAppContext } from "../context/app.context";
+import { Up } from "../components";
 
 import styles from "./Layout.module.css";
-import { Up } from "../components";
 
 const Layout = ({ children }: LayoutProps): JSX.Element => {
   return (
